@@ -1,0 +1,40 @@
+<div class="agencies-container">
+  <app-agencies-header [title]="'Detalle de Agencia'"></app-agencies-header>
+  <section class="section-form">
+    <form [formGroup]="presenter.form" (ngSubmit)="onSubmit()">
+
+      <div class="form-group d-firts-inputs">
+        <label for="agencia">Agencia</label>
+        <input type="text" class="form-control" name="agencia" formControlName="agencia" placeholder="Agencia">
+      </div>
+
+      <div class="form-group d-inputs">
+        <label for="direccion">Dirección</label>
+        <input type="text" class="form-control" name="agencia" formControlName="direccion" placeholder="Dirección">
+      </div>
+
+      <div class="form-group d-inputs">
+        <label for="distrito">Distrito</label>
+        <input type="text" class="form-control" name="agencia" formControlName="distrito" placeholder="Distrito">
+      </div>
+
+      <div class="form-group d-inputs">
+        <label for="latitud">Latitud</label>
+        <input type="text" class="form-control" name="latitud" formControlName="lat" placeholder="Latitud">
+      </div>
+
+      <div class="form-group d-inputs">
+        <label for="longitud">Longitud</label>
+        <input type="text" class="form-control" name="longitud" formControlName="lon" placeholder="Latitud">
+      </div>
+      <div class="map">
+        <agm-map [latitude]="lat" [longitude]="lon">
+          <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+        </agm-map>
+      </div>
+      <div class="section-button">
+        <button type="button" class="btn btn-primary">Actualizar</button>
+      </div>
+    </form>
+  </section>
+</div>

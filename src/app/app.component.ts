@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MainLoaderService } from './shared/helpers/main-loader.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'reto-bcp';
+  constructor(
+    private mainLoaderService: MainLoaderService,
+  ) {
+    this.mainLoaderService.isLoaded = true;
+  }
 }

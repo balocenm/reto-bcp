@@ -1,0 +1,9 @@
+<app-agencies-header></app-agencies-header>
+<div *ngFor="let item of agencies" >
+  <app-agencies-list-body
+    (updateAgency)="showDetail(item.id)"
+    [local]="item.agencia"
+    [district]="item.distrito"
+    [address]="item.direccion"
+  ></app-agencies-list-body>
+</div>
