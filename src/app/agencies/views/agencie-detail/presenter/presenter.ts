@@ -6,25 +6,25 @@ import { AgencyControl } from './controls/agency-detail';
 @Injectable()
 export class Presenter {
   protected _form: FormGroup;
-  protected _id = new AgencyControl();
-  protected _agencia = new AgencyControl();
-  protected _departamento = new AgencyControl();
-  protected _provincia = new AgencyControl();
-  protected _distrito = new AgencyControl();
-  protected _direccion = new AgencyControl();
-  protected _lat = new AgencyControl();
-  protected _lon = new AgencyControl();
+  protected idControl = new AgencyControl();
+  protected agenciaControl = new AgencyControl();
+  protected departamentoControl = new AgencyControl();
+  protected provinciaControl = new AgencyControl();
+  protected distritoControl = new AgencyControl();
+  protected direccionControl = new AgencyControl();
+  protected latitudControl = new AgencyControl();
+  protected longitudControl = new AgencyControl();
 
   constructor() {
     this._form = new FormGroup({
-      id: this._id,
-      agencia: this._agencia,
-      departamento: this._departamento,
-      provincia: this._provincia,
-      distrito: this._distrito,
-      direccion: this._direccion,
-      lat: this._lat,
-      lon: this._lon,
+      id: this.idControl,
+      agencia: this.agenciaControl,
+      departamento: this.departamentoControl,
+      provincia: this.provinciaControl,
+      distrito: this.distritoControl,
+      direccion: this.direccionControl,
+      lat: this.latitudControl,
+      lon: this.longitudControl,
     });
   }
 
@@ -33,35 +33,35 @@ export class Presenter {
   }
 
   get id(): AgencyControl {
-    return this._id;
+    return this.idControl;
   }
 
   get agencia(): AgencyControl {
-    return this._agencia;
+    return this.agenciaControl;
   }
 
   get departamento(): AgencyControl {
-    return this._departamento;
+    return this.departamentoControl;
   }
 
   get provincia(): AgencyControl {
-    return this._provincia;
+    return this.provinciaControl;
   }
 
   get distrito(): AgencyControl {
-    return this._distrito;
+    return this.distritoControl;
   }
 
   get direccion(): AgencyControl {
-    return this._direccion;
+    return this.direccionControl;
   }
 
   get lat(): AgencyControl {
-    return this._lat;
+    return this.latitudControl;
   }
 
   get lon(): AgencyControl {
-    return this._lon;
+    return this.longitudControl;
   }
 
   setForm(form: IAgency): void {
