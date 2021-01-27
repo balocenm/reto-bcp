@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MainLoaderService } from 'src/app/shared/helpers/main-loader.service';
 import { IAgency } from '../../models/agency.model';
@@ -9,7 +9,7 @@ import { AgencyService } from '../../services/agencies.service';
   templateUrl: './agencies-list.component.html',
   styleUrls: ['./agencies-list.component.scss']
 })
-export class AgenciesListComponent {
+export class AgenciesListComponent implements OnInit {
 
   agencies: IAgency[] = [];
 
@@ -19,8 +19,11 @@ export class AgenciesListComponent {
     private mainLoaderService: MainLoaderService,
 
   ) {
-    this.mainLoaderService.isLoaded = false;
     this.agencies = this.angencyService.getAgencies();
+  }
+
+  ngOnInit() {
+    this.mainLoaderService.isLoaded = false;
   }
 
   showDetail(id: string): void {

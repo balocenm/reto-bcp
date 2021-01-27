@@ -1,7 +1,7 @@
 <div class="agencies-container">
   <app-agencies-header [title]="'Detalle de Agencia'"></app-agencies-header>
   <section class="section-form">
-    <form [formGroup]="presenter.form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="presenter.form">
 
       <div class="form-group d-firts-inputs">
         <label for="agencia">Agencia</label>
@@ -23,18 +23,15 @@
         <input type="text" class="form-control" name="latitud" formControlName="lat" placeholder="Latitud">
       </div>
 
-      <div class="form-group d-inputs">
+      <div class="form-group d-inputs" style="margin-bottom: 30px;">
         <label for="longitud">Longitud</label>
         <input type="text" class="form-control" name="longitud" formControlName="lon" placeholder="Latitud">
       </div>
-      <!-- <div class="map">
-        <agm-map [latitude]="lat" [longitude]="lon">
-          <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
-        </agm-map>
-      </div> -->
       <div class="section-button">
+        <button type="button" class="btn btn-secondary" style="margin-right: 10px;" (click)="return()">Volver</button>
         <button type="button" class="btn btn-primary" (click)="onSubmit()">Actualizar</button>
       </div>
     </form>
   </section>
 </div>
+<app-footer></app-footer>

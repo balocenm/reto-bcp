@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MainLoaderService } from 'src/app/shared/helpers/main-loader.service';
 import { IAgency } from '../../models/agency.model';
 import { AgencyService } from '../../services/agencies.service';
 import { Presenter } from './presenter/presenter';
@@ -17,14 +18,17 @@ export class AgencieDetailComponent implements OnInit {
 
   lat: number;
   lon: number;
+  disabledButton: boolean;
 
   constructor(
     public presenter: Presenter,
     public agencyService: AgencyService,
     public router: Router,
-    public route: ActivatedRoute
-  ) {
+    public route: ActivatedRoute,
+    private mainLoaderService: MainLoaderService,
 
+  ) {
+    this.disabledButton = true;
     const id = route.snapshot.paramMap.get('id');
     if (id) {
       this.id = id;
@@ -34,6 +38,7 @@ export class AgencieDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.mainLoaderService.isLoaded = false;
     this.presenter.setForm(this.Agency);
   }
 
@@ -49,6 +54,11 @@ export class AgencieDetailComponent implements OnInit {
 
   getAgency(id: string): IAgency {
     return this.agencyService.get(id);
+  }
+
+  return() {
+    this.router.navigate(['/listado-agencia']);
+
   }
 
 }
