@@ -10,9 +10,10 @@ export class AgenciesListBodyComponent implements OnInit {
   @Input() local: string;
   @Input() district: string;
   @Input() address: string;
+  @Input() icono: string;
   @Output() updateAgency = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

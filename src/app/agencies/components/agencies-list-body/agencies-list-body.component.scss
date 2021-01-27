@@ -3,13 +3,15 @@
   display: flex;
   cursor: pointer;
   justify-content: space-between;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #CAC9D3;
   height: 7rem;
 
   .group-items {
     display: flex;
 
     .icon-item {
+      display: flex;
+      align-items: center;
       padding: 10px;
       margin: 10px;
     }

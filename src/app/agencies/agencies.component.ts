@@ -19,7 +19,7 @@ export class AgenciesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.mainLoaderService.isLoaded = false;
+    this.mainLoaderService.isLoaded = true;
     setTimeout(() => {
       if (this.router.url === '/') {
         this.mainLoaderService.isLoaded = false;

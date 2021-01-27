@@ -1,5 +1,6 @@
 .section-form {
   .d-firts-inputs {
+    padding: 0px 30px;
     margin-top: 30px;
 
     label {
@@ -10,6 +11,7 @@
   }
 
   .d-inputs {
+    padding: 0px 30px;
     label {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 15px;
@@ -18,5 +20,9 @@
   }
   agm-map {
     height: 300px;
+  }
+  .section-button{
+    display: flex;
+    justify-content: center;
   }
 }

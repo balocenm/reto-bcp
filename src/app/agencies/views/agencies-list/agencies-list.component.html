@@ -1,4 +1,5 @@
-<app-agencies-header></app-agencies-header>
+<app-agencies-header
+[title]="'Listado de Agencias'"></app-agencies-header>
 <div *ngFor="let item of agencies" >
   <app-agencies-list-body
     (updateAgency)="showDetail(item.id)"

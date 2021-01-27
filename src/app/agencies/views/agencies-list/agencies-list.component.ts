@@ -21,6 +21,7 @@ export class AgenciesListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.mainLoaderService.isLoaded = false;
     this.agencies = this.angencyService.getAgencies();
 
   }
